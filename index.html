@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            text-align: center;
+        }
+
+        .box {
+            background: white;
+            width: 320px;
+            margin: 80px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #msg {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Event Registration</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter Email">
+
+    <select id="event">
+        <option value="">Select Event</option>
+        <option>Workshop</option>
+        <option>Seminar</option>
+        <option>Hackathon</option>
+    </select>
+
+    <button onclick="register()">Register</button>
+
+    <p id="msg"></p>
+</div>
+
+<script>
+function register() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let event = document.getElementById("event").value;
+
+    if (name === "" || email === "" || event === "") {
+        document.getElementById("msg").innerHTML = "❌ Please fill all fields!";
+        document.getElementById("msg").style.color = "red";
+    } else {
+        document.getElementById("msg").innerHTML = "✅ Registered Successfully!";
+        document.getElementById("msg").style.color = "green";
+    }
+}
+</script>
+
+</body>
+</html>
